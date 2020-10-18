@@ -8,11 +8,11 @@ const { check, validationResult } = require("express-validator");
 
 const User = require("../models/User");
 
-// @route   POST api/users/new
+// @route   POST api/users/
 // @desc    Create a new user
 // @access  Private
 router.post(
-    "/new",
+    "/",
     [
         check("name", "Please enter your name").not().isEmpty(),
         check("email", "Please enter a valid email address").isEmail(),
@@ -72,11 +72,11 @@ router.post(
     }
 );
 
-// @route   PUT api/users/update
-// @desc    Update user name and password
+// @route   PUT api/users/
+// @desc    Update current user name and password
 // @access  Private
 router.put(
-    "/update",
+    "/",
     [
         auth,
         [
@@ -120,7 +120,7 @@ router.put(
 // @route   GET api/users
 // @desc    Get all the users
 // @access  Private
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
     try {
         const users = await User.find({}).select("-password").sort({ date: -1 });
         res.json(users);
