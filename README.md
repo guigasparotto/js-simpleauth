@@ -10,7 +10,7 @@ Simple authentication API using [JavaScript](https://www.javascript.com/) and [M
 ## Usage
 
 1. Clone the project in your local folder with `git clone https://github.com/guigasparotto/js-simpleauth.git`
-2. Open the project folder in your preferred editor - suggestion: (VS Code)[https://code.visualstudio.com/]
+2. Open the project folder in your preferred editor - suggestion: [VS Code](https://code.visualstudio.com/)
 3. Open the terminal and navigate to the app directory, then run `npm install` to install the dependencies required
 4. In the `default.config` file, located in the `config ` folder, enter the DB connection string (instructions to create the DB below) and a JWT secret that will be used to authenticate in the API
 5. Once the database is created, and the parameters are set in the `default.config` file, run `npm run server` to start the application, you should see the logs below
